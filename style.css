@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: #0a0015 url('bg.jpg') center center / cover no-repeat fixed;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px 40px;
+  overflow-x: hidden;
+}
+
+/* ========== BANNER (rasio ~2.73:1, pinggir setengah lingkaran) ========== */
+.banner {
+  width: 100%;
+  max-width: 480px;
+  margin-top: 16px;
+  aspect-ratio: 2.73 / 1;
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(255, 105, 180, 0.35);
+}
+
+.banner-inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff6ec7 0%, #c44dff 45%, #7b2fff 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 0 24px;
+}
+
+.banner-inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 15% 40%, rgba(255,255,255,0.28), transparent 45%),
+              radial-gradient(circle at 85% 60%, rgba(255,255,255,0.18), transparent 40%);
+  pointer-events: none;
+}
+
+.banner-title {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  line-height: 1.15;
+  position: relative;
+  z-index: 1;
+}
+
+.banner-title span {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.95;
+  margin-top: 2px;
+}
+
+.banner-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  background: rgba(0,0,0,0.35);
+  border: 1.5px solid rgba(255,255,255,0.55);
+  border-radius: 50px;
+  padding: 4px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(4px);
+}
+
+.banner-link svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ========== PROFILE (logo transparan, TANPA lingkaran) ========== */
+.profile {
+  margin-top: 28px;
+  text-align: center;
+  max-width: 480px;
+  width: 100%;
+}
+
+.logo-wrap {
+  width: 120px;
+  margin: 0 auto 10px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.logo-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+  filter: drop-shadow(0 4px 12px rgba(255, 110, 199, 0.45));
+}
+
+.username {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffb6e6;
+  margin-bottom: 4px;
+}
+
+.tagline {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.socials a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,182,230,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  background: linear-gradient(135deg, #ff6ec7, #c44dff);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255,110,199,0.4);
+}
+
+.socials a svg {
+  width: 18px;
+  height: 18px;
+  fill: #ffb6e6;
+}
+
+.socials a:hover svg {
+  fill: #fff;
+}
+
+/* ========== BUTTONS ========== */
+.buttons {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(90deg, #ff6ec7 0%, #e05cff 50%, #a855f7 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 18px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 16px rgba(196, 77, 255, 0.35);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(196, 77, 255, 0.5);
+}
+
+.btn:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.btn-icon img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  background: transparent;
+}
+
+.btn-text {
+  flex: 1;
+  text-align: center;
+  padding-right: 42px;
+}
+
+/* Footer */
+.footer {
+  margin-top: 32px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+}
+
+.footer span {
+  color: #ff6ec7;
+  font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 400px) {
+  .banner-title {
+    font-size: 15px;
+  }
+  .banner-title span {
+    font-size: 11px;
+  }
+  .banner-link {
+    font-size: 10px;
+    padding: 3px 12px;
+  }
+  .btn {
+    font-size: 13px;
+    padding: 11px 14px;
+  }
+  .btn-icon {
+    width: 38px;
+    height: 38px;
+  }
+  .btn-icon img {
+    width: 30px;
+    height: 30px;
+  }
+}
