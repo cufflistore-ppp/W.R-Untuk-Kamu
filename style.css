@@ -16,79 +16,25 @@ body {
   overflow-x: hidden;
 }
 
-/* ========== BANNER (rasio ~2.73:1, pinggir setengah lingkaran) ========== */
+/* ========== BANNER (hanya foto, ujung setengah lingkaran) ========== */
 .banner {
   width: 100%;
   max-width: 480px;
   margin-top: 16px;
+  /* rasio mengikuti gambar banner */
   aspect-ratio: 2.73 / 1;
-  border-radius: 9999px;
+  border-radius: 9999px; /* ujung kiri-kanan = setengah lingkaran */
   overflow: hidden;
   position: relative;
   box-shadow: 0 8px 32px rgba(255, 105, 180, 0.35);
 }
 
-.banner-inner {
+.banner img {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #ff6ec7 0%, #c44dff 45%, #7b2fff 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  padding: 0 24px;
-}
-
-.banner-inner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 15% 40%, rgba(255,255,255,0.28), transparent 45%),
-              radial-gradient(circle at 85% 60%, rgba(255,255,255,0.18), transparent 40%);
-  pointer-events: none;
-}
-
-.banner-title {
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 0.8px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
-  line-height: 1.15;
-  position: relative;
-  z-index: 1;
-}
-
-.banner-title span {
+  object-fit: cover;
+  object-position: center;
   display: block;
-  font-size: 13px;
-  font-weight: 600;
-  opacity: 0.95;
-  margin-top: 2px;
-}
-
-.banner-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: 8px;
-  background: rgba(0,0,0,0.35);
-  border: 1.5px solid rgba(255,255,255,0.55);
-  border-radius: 50px;
-  padding: 4px 14px;
-  font-size: 11px;
-  font-weight: 600;
-  color: #fff;
-  text-decoration: none;
-  position: relative;
-  z-index: 1;
-  backdrop-filter: blur(4px);
-}
-
-.banner-link svg {
-  width: 12px;
-  height: 12px;
 }
 
 /* ========== PROFILE (logo transparan, TANPA lingkaran) ========== */
@@ -254,16 +200,6 @@ body {
 
 /* Mobile */
 @media (max-width: 400px) {
-  .banner-title {
-    font-size: 15px;
-  }
-  .banner-title span {
-    font-size: 11px;
-  }
-  .banner-link {
-    font-size: 10px;
-    padding: 3px 12px;
-  }
   .btn {
     font-size: 13px;
     padding: 11px 14px;
