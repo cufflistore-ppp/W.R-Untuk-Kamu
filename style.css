@@ -16,14 +16,14 @@ body {
   overflow-x: hidden;
 }
 
-/* ========== BANNER (hanya foto, ujung setengah lingkaran) ========== */
+/* ========== BANNER ========== */
+/* Bentuk mengikuti foto asli (persegi panjang), hanya sudut dibulatkan lembut */
 .banner {
   width: 100%;
   max-width: 480px;
   margin-top: 16px;
-  /* rasio mengikuti gambar banner */
   aspect-ratio: 2.73 / 1;
-  border-radius: 9999px; /* ujung kiri-kanan = setengah lingkaran */
+  border-radius: 18px;          /* sudut dibulatkan, bukan kapsul */
   overflow: hidden;
   position: relative;
   box-shadow: 0 8px 32px rgba(255, 105, 180, 0.35);
