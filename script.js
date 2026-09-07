@@ -1,13 +1,15 @@
-// script.js – script umum (sosial media & utilitas)
-// Semua tombol JB / SL / Website sudah digabung di list.js
+// script.js – link sosial media
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('UK • Untuk Kamu – script.js loaded');
 
-  // Link sosial media
+  // ========== LINK SOSIAL MEDIA ==========
   const socialLinks = {
-    'link-tiktok': 'https://www.tiktok.com/@untukkamu',      // ganti dengan link asli
-    'link-whatsapp': 'https://wa.me/6281234567890'          // ganti dengan nomor WA
+    'link-whatsapp': 'https://wa.me/6285842728134',
+    'link-tiktok': 'https://www.tiktok.com/@untukkamu5210',
+    'link-instagram': 'https://www.instagram.com/untukkamu896',
+    'link-telegram': 'https://t.me/untukkamu521',
+    'link-email': 'mailto:untukkamuu521@gmail.com'
   };
 
   Object.keys(socialLinks).forEach(id => {

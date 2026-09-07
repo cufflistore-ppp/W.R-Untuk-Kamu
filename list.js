@@ -1,43 +1,27 @@
-// list.js – semua saluran / list digabung di sini
-// JB¹, JB², SL¹, Website, dll semuanya dikelola dari file ini
+// list.js – semua saluran digabung di sini
+// Tombol mengarah ke link grup / saluran WhatsApp (tanpa harga)
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('UK • Untuk Kamu – list.js loaded (semua saluran)');
 
-  // ========== DATA SALURAN ==========
+  // ========== LINK GRUP / SALURAN WHATSAPP ==========
+  // Ganti link di bawah dengan link grup/saluran asli kalau sudah ada
   const saluran = {
     jb1: {
       title: 'UK ELITE | JB¹',
-      items: [
-        { id: 1, name: 'Paket JB¹ Basic', status: 'Ready', harga: 'Rp 15.000' },
-        { id: 2, name: 'Paket JB¹ Premium', status: 'Ready', harga: 'Rp 25.000' },
-        { id: 3, name: 'Paket JB¹ Elite', status: 'Pending', harga: 'Rp 40.000' },
-      ]
+      link: 'https://wa.me/6285842728134?text=Halo%20saya%20mau%20join%20UK%20ELITE%20JB1'
     },
     jb2: {
       title: 'UK ELITE | JB²',
-      items: [
-        { id: 1, name: 'Paket JB² Basic', status: 'Ready', harga: 'Rp 18.000' },
-        { id: 2, name: 'Paket JB² Premium', status: 'Ready', harga: 'Rp 30.000' },
-        { id: 3, name: 'Paket JB² Elite', status: 'Ready', harga: 'Rp 50.000' },
-        { id: 4, name: 'Paket JB² Ultra', status: 'Pending', harga: 'Rp 75.000' },
-      ]
+      link: 'https://wa.me/6285842728134?text=Halo%20saya%20mau%20join%20UK%20ELITE%20JB2'
     },
     sl1: {
       title: 'UK ELITE | SL¹',
-      items: [
-        { id: 1, name: 'Saluran SL¹ Starter', status: 'Ready', harga: 'Rp 20.000' },
-        { id: 2, name: 'Saluran SL¹ Pro', status: 'Ready', harga: 'Rp 35.000' },
-        { id: 3, name: 'Saluran SL¹ Max', status: 'Ready', harga: 'Rp 55.000' },
-      ]
+      link: 'https://wa.me/6285842728134?text=Halo%20saya%20mau%20join%20UK%20ELITE%20SL1'
     },
     website: {
       title: 'WEBSITE UK UNTUK KAMU',
-      items: [
-        { id: 1, name: 'Landing Page', status: 'Ready', harga: 'Rp 50.000' },
-        { id: 2, name: 'Website Portfolio', status: 'Ready', harga: 'Rp 100.000' },
-        { id: 3, name: 'Website Toko Online', status: 'Pending', harga: 'Rp 200.000' },
-      ]
+      link: 'https://wa.me/6285842728134?text=Halo%20saya%20mau%20info%20Website%20UK%20Untuk%20Kamu'
     }
   };
 
@@ -55,30 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         const key = btnMap[btnId];
-        showSaluran(saluran[key]);
+        const data = saluran[key];
+        if (data && data.link) {
+          window.open(data.link, '_blank');
+        }
       });
     }
   });
-
-  // ========== FUNGSI TAMPILKAN SALURAN ==========
-  function showSaluran(data) {
-    if (!data) return;
-
-    let message = `✨ ${data.title}\n`;
-    message += '────────────────────\n\n';
-
-    data.items.forEach((item, index) => {
-      const statusIcon = item.status === 'Ready' ? '✅' : '⏳';
-      message += `${index + 1}. ${item.name}\n`;
-      message += `   ${statusIcon} ${item.status}  |  ${item.harga}\n\n`;
-    });
-
-    message += `Total: ${data.items.length} item`;
-    alert(message);
-
-    // Debug di console
-    console.group(data.title);
-    console.table(data.items);
-    console.groupEnd();
-  }
 });
